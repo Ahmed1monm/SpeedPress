@@ -10,8 +10,8 @@
     "prestart": "npm run build"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ahmed Mone'm",
+  "license": "MIT",
   "dependencies": {
     "commander": "^11.1.0"
   },
