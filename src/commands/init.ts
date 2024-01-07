@@ -1,3 +1,5 @@
+import chalk from "chalk";
+
 import { createDir } from "../utils/createDir";
 import { createFile } from "../utils/createFile";
 import {writeIntoFile} from "../utils/writeIntoFile";
@@ -18,7 +20,7 @@ export function initHandler(name: string): void | Promise<void> {
             {name:"README.md", content: ""},
             {name:"swagger.yaml", content: swaggerContent(name)}
         ];
-    console.log("Initializing project...");
+    console.log(chalk.grey( "Initializing project..."));
     createDir(name);
     requiresDirs.forEach(dir => {
         createDir(`${name}/${dir}`);
@@ -27,4 +29,5 @@ export function initHandler(name: string): void | Promise<void> {
         createFile(file.name, name);
         writeIntoFile(file.name, name, file.content);
     });
+    console.log(chalk.green.underline.bold( "Project initialized successfully."));
 }
