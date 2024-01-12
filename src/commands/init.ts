@@ -20,7 +20,8 @@ export function initHandler(name: string): void | Promise<void> {
             // {name:"src/index.ts", content: ""},
             {name: ".gitignore", content: gitignoreContent()},
             {name: "README.md", content: ""},
-            {name: "swagger.yaml", content: swaggerContent(name)}
+            {name: "swagger.yaml", content: swaggerContent(name)},
+            {name: "Dockerfile", content: ""},
         ];
     console.log(chalk.grey("Initializing project..."));
     createDir(name);
