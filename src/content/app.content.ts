@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import bodyParser from "body-parser";
 import path from "path";
+import helmet from "helmet";
 
 const ${name} = express();
 dotenv.config();
