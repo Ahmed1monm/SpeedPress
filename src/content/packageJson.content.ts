@@ -34,5 +34,5 @@ export function packageJsonContent(projectName: string): string {
     "typescript": "^5.2.2"
   }
 }
-` ;
+`;
 }
