@@ -5,6 +5,6 @@ export function writeIntoFile(name: string, dir: string, content: string): void 
     console.log(chalk.grey("Writing into file..."));
     fs.writeFile(`${dir}/${name}`, content, (err) => {
         if (err) throw err;
-        console.log(chalk.green.underline.bold(`File ${name} is ready......!!!`));
+        console.log(chalk.blue.underline.bold(`File ${name} is ready......!!!`));
     });
 }

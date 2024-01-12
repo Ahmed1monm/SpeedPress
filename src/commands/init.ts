@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import {exec, ExecException} from "node:child_process";
 
 import {createDir} from "../utils/createDir";
 import {createFile} from "../utils/createFile";
@@ -11,7 +12,8 @@ import {fileContentType} from "../types/fileContentType";
 import {appContent} from "../content/app.content";
 import {dockerfileContent} from "../content/Dockerfile.content";
 
-export function initHandler(name: string): void | Promise<void> {
+export function initHandler(name: string=""): void | Promise<void> {
+    if (name === "") name = "ezpress-created-app";
     const requiresParentDirs: string[] = ["src", "tests", "dist"];
     const requiresSubDirs: string[] = ["controllers", "services", "routes", "models", "middlewares", "utils"];
     const requiresFiles: fileContentType[] =
@@ -41,5 +43,20 @@ export function initHandler(name: string): void | Promise<void> {
         createFile(file.name, name);
         writeIntoFile(file.name, name, file.content);
     });
-    console.log(chalk.green.underline.bold("Project initialized successfully."));
+
+    exec(`cd ${name} && npm install`, (err: ExecException|null, stdout: string, stderr: string) => {
+        if (err) {
+            console.log(chalk.red("Error while installing dependencies..."));
+            console.log(chalk.red(err));
+            return;
+        }
+        console.log(chalk.blue(stdout));
+        console.log(chalk.red(stderr));
+    });
+
+    setTimeout((): void => {
+        console.log(chalk.green.underline.bold("Project initialized successfully."));
+        console.log(chalk.blue("Installing dependencies, please wait..."));
+
+    }, 10);
 }
