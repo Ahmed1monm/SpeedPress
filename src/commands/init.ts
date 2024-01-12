@@ -9,6 +9,7 @@ import {gitignoreContent} from "../content/gitignore.content";
 import {swaggerContent} from "../content/swagger.content";
 import {fileContentType} from "../types/fileContentType";
 import {appContent} from "../content/app.content";
+import {dockerfileContent} from "../content/Dockerfile.content";
 
 export function initHandler(name: string): void | Promise<void> {
     const requiresParentDirs: string[] = ["src", "tests", "dist"];
@@ -21,7 +22,7 @@ export function initHandler(name: string): void | Promise<void> {
             {name: ".gitignore", content: gitignoreContent()},
             {name: "README.md", content: ""},
             {name: "swagger.yaml", content: swaggerContent(name)},
-            {name: "Dockerfile", content: ""},
+            {name: "Dockerfile", content: dockerfileContent()},
         ];
     console.log(chalk.grey("Initializing project..."));
     createDir(name);
