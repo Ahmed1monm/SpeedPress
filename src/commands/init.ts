@@ -8,6 +8,7 @@ import {tsconfigJsonContent} from "../content/tsconfigJson.content";
 import {gitignoreContent} from "../content/gitignore.content";
 import {swaggerContent} from "../content/swagger.content";
 import {fileContentType} from "../types/fileContentType";
+import {appContent} from "../content/app.content";
 
 export function initHandler(name: string): void | Promise<void> {
     const requiresParentDirs: string[] = ["src", "tests", "dist"];
@@ -30,7 +31,8 @@ export function initHandler(name: string): void | Promise<void> {
                 createDir(`${name}/${dir}/${subDir}`);
                 createFile("index.ts", `${name}/${dir}/${subDir}`)
             });
-            createFile("index.ts", `${name}/${dir}`);
+            // createFile("index.ts", `${name}/${dir}`);
+            writeIntoFile("index.ts", `${name}/${dir}`,appContent(name));
         }
     });
     requiresFiles.forEach(file => {
