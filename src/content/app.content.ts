@@ -22,9 +22,9 @@ ${name}.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 ${name}.use(cors());
 ${name}.use("/assets", express.static(path.join(__dirname, "/assets")));
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-${name}.listen(process.env.PORT, () => {
+${name}.listen(PORT, () => {
     console.log(\`Server running ....\`);
   });
     `;

@@ -15,7 +15,7 @@ import {dockerfileContent} from "../content/Dockerfile.content";
 export function initHandler(name: string=""): void | Promise<void> {
     if (name === "") name = "ezpress-created-app";
     const requiresParentDirs: string[] = ["src", "tests", "dist"];
-    const requiresSubDirs: string[] = ["controllers", "services", "routes", "models", "middlewares", "utils"];
+    const requiresSubDirs: string[] = ["controllers", "services", "routes", "models", "middlewares", "utils", "config"];
     const requiresFiles: fileContentType[] =
         [
             {name: "package.json", content: packageJsonContent(name)},
@@ -25,6 +25,8 @@ export function initHandler(name: string=""): void | Promise<void> {
             {name: "README.md", content: ""},
             {name: "swagger.yaml", content: swaggerContent(name)},
             {name: "Dockerfile", content: dockerfileContent()},
+            {name:".dockerignore", content: "\nnode_modules\n"},
+            {name: ".env", content: "PORT=3000\n"},
         ];
     console.log(chalk.grey("Initializing project..."));
     createDir(name);
