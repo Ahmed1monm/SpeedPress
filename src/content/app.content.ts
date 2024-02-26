@@ -1,5 +1,5 @@
 export function appContent (name=""): string {
-    if (name === "") name = "${name}";
+    if (name === "") name = "ezpress";
     return`
 import express from 'express';
 import cors from "cors";
