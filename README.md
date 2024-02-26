@@ -8,6 +8,10 @@ All files have the necessary, commonly used code to get started with a new proje
 
 ### Installation
 ```bash
-  npm run build
-  npm run start init <project-name>
+  npm install -g ez-press
+```
+
+### Usage
+```bash
+  ez-press init <project-name>
 ```
