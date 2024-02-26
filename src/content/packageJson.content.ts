@@ -7,8 +7,8 @@ export function packageJsonContent(projectName: string): string {
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec ts-node app.ts",
-    "dev": "nodemon --exec ts-node app.ts",
+    "start": "nodemon --exec ts-node src/index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts",
     "test": "echo \\"Error: no test specified\\" && exit 1",
     "build": "tsc"
   },
