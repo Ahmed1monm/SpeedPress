@@ -12,7 +12,7 @@ import {fileContentType} from "../types/fileContentType";
 import {appContent} from "../content/app.content";
 import {dockerfileContent} from "../content/Dockerfile.content";
 
-export function initHandler(name: string=""): void | Promise<void> {
+export function initHandler(name: string = ""): void | Promise<void> {
     if (name === "") name = "ezpress-created-app";
     const requiresParentDirs: string[] = ["src", "tests", "dist"];
     const requiresSubDirs: string[] = ["controllers", "services", "routes", "models", "middlewares", "utils", "config"];
@@ -25,7 +25,7 @@ export function initHandler(name: string=""): void | Promise<void> {
             {name: "README.md", content: ""},
             {name: "swagger.yaml", content: swaggerContent(name)},
             {name: "Dockerfile", content: dockerfileContent()},
-            {name:".dockerignore", content: "\nnode_modules\n"},
+            {name: ".dockerignore", content: "\nnode_modules\n"},
             {name: ".env", content: "PORT=3000\n"},
         ];
     console.log(chalk.grey("Initializing project..."));
@@ -38,7 +38,7 @@ export function initHandler(name: string=""): void | Promise<void> {
                 createFile("index.ts", `${name}/${dir}/${subDir}`)
             });
             // createFile("index.ts", `${name}/${dir}`);
-            writeIntoFile("index.ts", `${name}/${dir}`,appContent(name));
+            writeIntoFile("index.ts", `${name}/${dir}`, appContent(name));
         }
     });
     requiresFiles.forEach(file => {
@@ -46,7 +46,7 @@ export function initHandler(name: string=""): void | Promise<void> {
         writeIntoFile(file.name, name, file.content);
     });
 
-    exec(`cd ${name} && npm install`, (err: ExecException|null, stdout: string, stderr: string) => {
+    exec(`cd ${name} && npm install`, (err: ExecException | null, stdout: string, stderr: string) => {
         if (err) {
             console.log(chalk.red("Error while installing dependencies..."));
             console.log(chalk.red(err));
