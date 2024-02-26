@@ -1,5 +1,5 @@
 {
-  "name": "ezpress",
+  "name": "ez-press",
   "version": "1.0.0",
   "description": "CLI tool to generate a simple express app with typescript with clean architecture and the common required middlewares and packages",
   "main": "ezpress.js",
