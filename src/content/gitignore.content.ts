@@ -1,5 +1,5 @@
 export function gitignoreContent() {
-    return `
+	return `
         /node_modules
         /assets
         /dist    

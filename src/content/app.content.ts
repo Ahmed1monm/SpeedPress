@@ -1,6 +1,6 @@
-export function appContent(name = ""): string {
-    if (name === "") name = "ezpress";
-    return `
+export function appContent(name = ''): string {
+	if (name === '') name = 'ezpress';
+	return `
 import express from 'express';
 import dotenv from "dotenv";
 import morgan from "morgan";

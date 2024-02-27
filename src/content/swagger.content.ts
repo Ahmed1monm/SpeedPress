@@ -1,5 +1,5 @@
 export function swaggerContent(name: string): string {
-    return `
+	return `
 openapi: 3.0.0
 info:
     title: ${name}

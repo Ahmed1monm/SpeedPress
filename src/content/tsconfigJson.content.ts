@@ -1,5 +1,5 @@
 export function tsconfigJsonContent(): string {
-    return `{
+	return `{
     "compilerOptions": {
         "target": "es6",
         "module": "commonjs",

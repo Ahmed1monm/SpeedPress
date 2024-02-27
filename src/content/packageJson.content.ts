@@ -1,6 +1,6 @@
 export function packageJsonContent(projectName: string): string {
-    // TODO: Add the required scripts [test, dev, start] and dependencies
-    return `
+	// TODO: Add the required scripts [test, dev, start] and dependencies
+	return `
   {
   "name": "${projectName}",
   "version": "1.0.0",
