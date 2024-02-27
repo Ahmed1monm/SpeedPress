@@ -16,7 +16,7 @@
     "start": "node dist/ezpress.js",
     "prestart": "npm run build",
     "test": "jest",
-    "lint": "eslint --fix . --ext .ts"
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [
     "Ez-press",
