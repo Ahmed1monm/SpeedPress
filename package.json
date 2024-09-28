@@ -1,6 +1,6 @@
 {
   "name": "speedpress",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool to generate a simple express app with typescript with clean architecture and the common required middlewares and packages",
   "main": "speedPress.js",
   "bin": {
