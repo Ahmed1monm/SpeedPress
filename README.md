@@ -1,4 +1,4 @@
-# EzPress
+# SpeedPress
 
 A CLI tool to initialize a new express project with in TypeScript with a clean architecture and a set of files that are commonly used in every project.
 
@@ -37,11 +37,11 @@ All files have the necessary, commonly used code to get started with a new proje
 ## Installation
 
 ```bash
-  npm install -g ez-press
+  npm install -g speedpress
 ```
 
 ### Usage
 
 ```bash
-  ez-press init <project-name>
+  speedpress init <project-name>
 ```

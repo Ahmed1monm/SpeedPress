@@ -12,8 +12,12 @@ import {fileContentType} from '../types/fileContentType';
 import {appContent} from '../content/app.content';
 import {dockerfileContent} from '../content/Dockerfile.content';
 
+import { snakeToCamelCase } from '../utils/snakeToCamleCase';
+
 export function initHandler(name: string = ''): void | Promise<void> {
 	if (name === '') name = 'ezpress-created-app';
+	name = snakeToCamelCase(name);
+
 	const requiresParentDirs: string[] = ['src', 'tests', 'dist'];
 	const requiresSubDirs: string[] = ['controllers', 'services', 'routes', 'models', 'middlewares', 'utils', 'config'];
 	const requiresFiles: fileContentType[] =

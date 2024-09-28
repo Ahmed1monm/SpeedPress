@@ -1,10 +1,10 @@
 {
-  "name": "ez-press",
-  "version": "1.0.1",
+  "name": "speedpress",
+  "version": "1.0.0",
   "description": "CLI tool to generate a simple express app with typescript with clean architecture and the common required middlewares and packages",
-  "main": "ezpress.js",
+  "main": "speedPress.js",
   "bin": {
-    "ezpress": "dist/ezpress.js"
+    "speedpress": "dist/src/speedPress.js"
   },
   "repository": {
     "url": "https://github.com/Ahmed1monm/EzPress.git",
@@ -13,20 +13,24 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
-    "start": "node dist/ezpress.js",
+    "start": "node dist/speedPress.js",
     "prestart": "npm run build",
     "test": "jest",
     "lint": "eslint . --ext .ts"
   },
   "keywords": [
-    "Ez-press",
+    "speedPress",
     "CLI",
     "express",
     "automation",
     "typescript",
     "clean-architecture",
     "middlewares",
+    "scaffold",
+    "generator",
+    "tool",
     "packages",
+    "template",
     "nodejs",
     "backend",
     "api",
@@ -38,9 +42,7 @@
     "restful-api-automation-cli",
     "restful-api-automation-cli-tool",
     "restful-api-automation-cli-tool-generator",
-    "graph",
-    "scaffold",
-    "template"
+    "graph"
   ],
   "author": "Ahmed Mone'm",
   "license": "MIT",
